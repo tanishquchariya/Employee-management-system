@@ -1,0 +1,38 @@
+{
+  "employeeId": "EMP-101",
+  "name": "John Doe",
+  "email": "john.personal@gmail.com",
+  "workEmail": "john.doe@company.com",
+  "workPassword": "JohnPass@123",
+  "phone": "9876543210",
+  "gender": "Male",
+  "department": "Engineering",
+  "designation": "Full Stack Developer",
+  "salary": "75000",
+  "salaryPeriod": "monthly",
+  "joiningDate": "2024-01-15",
+  "bankName": "HDFC Bank",
+  "accountNumber": "50100234567890",
+  "ifscCode": "HDFC0001234",
+  "accountStatus": "Active",
+  "profileImage": "avatar.png"
+}
+
+
+// for payroll
+{
+  "employeeId": "",
+  "empId": "EMP-101",
+  "name": "John Doe",
+  "role": "Software Developer",
+  "department": "Engineering",
+  "payDate": "2026-08-31",
+  "salaryPeriod": "2026-08",
+  "month": "August",
+  "baseSalary": 75000,
+  "bonus": 5000,
+  "overtime": 2000,
+  "deduction": 1500,
+  "netSalary": 80500,
+  "status": "Paid"
+}
