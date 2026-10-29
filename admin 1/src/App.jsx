@@ -10,6 +10,7 @@ import AttendancePage from "./components/AttendancePage/AttendancePage";
 import LeavesPage from "./components/LeavesPage/LeavesPage";
 import PayRollPage from "./components/PayRollPage/PayRollPage";
 import AnnouncementPage from "./components/AnnouncementPage/AnnouncementPage";
+import EmployeeFormModal2 from "./components/EmployeePage/EmployeeFormModal2";
 
 // Everything except /login requires a signed-in admin.
 const ProtectedLayout = () => {
@@ -36,6 +37,9 @@ const App = () => (
           <Route path="/leaves" element={<LeavesPage />} />
           <Route path="/payroll" element={<PayRollPage />} />
           <Route path="/announcements" element={<AnnouncementPage />} />
+
+          {/* React Hook Form practice page */}
+          {/* <Route path="/rhf-practice" element={<EmployeeFormModal2 />} /> */}
         </Route>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

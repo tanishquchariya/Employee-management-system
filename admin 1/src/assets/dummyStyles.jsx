@@ -853,12 +853,22 @@ export const employeeFormModalStyles = {
   lockIcon: "h-3.5 w-3.5 text-zinc-400",
 
   // Input class helper (dynamic error)
-  getInputClass: (field, formErrors) => {
+  // getInputClass: (field, formErrors) => {
+  //   const base =
+  //     "mt-1 h-11 w-full rounded-xl border bg-white px-3 text-sm font-bold text-zinc-950 outline-none transition placeholder:text-zinc-400 focus:border-zinc-500 focus:ring-4 focus:ring-zinc-100";
+  //   const errorClass = "border-rose-300 focus:border-rose-400 focus:ring-rose-50";
+  //   const normalClass = "border-zinc-200";
+  //   return `${base} ${formErrors[field] ? errorClass : normalClass}`;
+  // },
+
+   getInputClass: (field, formErrors, message = false) => {
     const base =
       "mt-1 h-11 w-full rounded-xl border bg-white px-3 text-sm font-bold text-zinc-950 outline-none transition placeholder:text-zinc-400 focus:border-zinc-500 focus:ring-4 focus:ring-zinc-100";
     const errorClass = "border-rose-300 focus:border-rose-400 focus:ring-rose-50";
     const normalClass = "border-zinc-200";
-    return `${base} ${formErrors[field] ? errorClass : normalClass}`;
+
+    const value = message ? formErrors[field]?.message : formErrors[field];
+    return `${base} ${value ? errorClass : normalClass}`;
   },
 
   // Select class helper (dynamic error)

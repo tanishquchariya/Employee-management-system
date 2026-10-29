@@ -11,6 +11,7 @@ import { useData } from "../../context/DataContext";
 import EmployeeDetailsModal from "./EmployeeDetailsModal";
 import EmployeeFilters from "./EmployeeFilters";
 import EmployeeFormModal from "./EmployeeFormModal";
+import EmployeeFormModal2 from "./EmployeeFormModal2";
 import EmployeeTable from "./EmployeeTable";
 import EmployeeToast from "./EmployeeToast";
 import SummaryCard from "./SummaryCard";
@@ -501,7 +502,7 @@ const EmployeePage = () => {
       />
 
       {isFormOpen && (
-        <EmployeeFormModal
+        <EmployeeFormModal2
           mode={formMode}
           formData={formData}
           formErrors={formErrors}
@@ -512,6 +513,10 @@ const EmployeePage = () => {
           loading={saving}
         />
       )}
+
+      {/* {isFormOpen && (
+        <EmployeeFormModal2 />
+      )} */}
 
       {selectedEmployee && (
         <EmployeeDetailsModal
