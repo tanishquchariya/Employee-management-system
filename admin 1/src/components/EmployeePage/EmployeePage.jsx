@@ -310,11 +310,15 @@ const EmployeePage = () => {
   };
 
   // Validates and submits employee data to create/update the record, updates local state and shows the result toast; resolves without a useful return value.
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const handleSubmit = async (data) => {
+    // event.preventDefault();
+    const submittedForm = {
+      ...formData,
+      ...data,
+    }
 
     const errors = validateEmployeeForm({
-      formData,
+      formData : submittedForm,
       employees,
       editingEmployeeId,
     });
@@ -331,22 +335,22 @@ const EmployeePage = () => {
 
     const initials = getInitials(formData.name);
     const fd = new FormData();
-    fd.append("employeeId", formData.id.trim());
-    fd.append("name", formData.name.trim());
-    fd.append("email", formData.email.trim());
-    fd.append("workEmail", formData.workEmail.trim());
-    fd.append("workPassword", formData.workPassword.trim());
-    fd.append("phone", getPhoneDigits(formData.phone));
-    fd.append("gender", formData.gender);
-    fd.append("department", formData.department.trim());
-    fd.append("designation", formData.designation.trim());
-    fd.append("salary", Number(formData.salary));
-    fd.append("salaryPeriod", formData.salaryPeriod);
-    fd.append("joiningDate", formData.joiningDate);
-    fd.append("bankName", formData.bankName.trim());
-    fd.append("accountNumber", getDigitsOnly(formData.accountNumber));
-    fd.append("ifscCode", formData.ifscCode.trim().toUpperCase());
-    fd.append("accountStatus", formData.accountStatus);
+    fd.append("employeeId", submittedForm.id.trim());
+    fd.append("name", submittedForm.name.trim());
+    fd.append("email", submittedForm.email.trim());
+    fd.append("workEmail", submittedForm.workEmail.trim());
+    fd.append("workPassword", submittedForm.workPassword.trim());
+    fd.append("phone", getPhoneDigits(submittedForm.phone));
+    fd.append("gender", submittedForm.gender);
+    fd.append("department", submittedForm.department.trim());
+    fd.append("designation", submittedForm.designation.trim());
+    fd.append("salary", Number(submittedForm.salary));
+    fd.append("salaryPeriod", submittedForm.salaryPeriod);
+    fd.append("joiningDate", submittedForm.joiningDate);
+    fd.append("bankName", submittedForm.bankName.trim());
+    fd.append("accountNumber", getDigitsOnly(submittedForm.accountNumber));
+    fd.append("ifscCode", submittedForm.ifscCode.trim().toUpperCase());
+    fd.append("accountStatus", submittedForm.accountStatus);
 
     if (selectedFile) {
       fd.append("profileImage", selectedFile);
